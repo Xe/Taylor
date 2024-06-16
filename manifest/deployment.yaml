@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taylor
+  annotations:
+    operator.1password.io/auto-restart: "true"
+spec:
+  replicas: 1
+  template:
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: main
+          image: ghcr.io/xe/taylor:latest
+          imagePullPolicy: "Always"
+          resources:
+            limits:
+              cpu: "4"
+              memory: "2Gi"
+            requests:
+              cpu: "2"
+              memory: "1Gi"
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            seccompProfile:
+              type: RuntimeDefault
+          envFrom:
+            - secretRef:
+                name: taylor

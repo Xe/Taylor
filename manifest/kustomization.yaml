@@ -1,0 +1,5 @@
+resources:
+  - 1password.yaml
+  - deployment.yaml
+commonLabels:
+  app.kubernetes.io/name: taylor
