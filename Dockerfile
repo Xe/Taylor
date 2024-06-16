@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN swift build -c release --static-swift-stdlib
 
-FROM ubuntu:latest
+FROM swift:slim
 WORKDIR /app
 COPY --from=builder /app/.build/release/Taylor .
 CMD ["./Taylor"]

@@ -12,7 +12,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: main
-          image: ghcr.io/xe/taylor:latest
+          image: ghcr.io/xe/taylor:main
           imagePullPolicy: "Always"
           resources:
             limits:
