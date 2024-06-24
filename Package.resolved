@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "ollamakit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kevinhermawan/OllamaKit.git",
+      "state" : {
+        "revision" : "8264a8766c391427944cd4d55304bdfdcb8fdfee",
+        "version" : "5.0.0"
+      }
+    },
+    {
       "identity" : "opencombine",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/OpenCombine/OpenCombine.git",
